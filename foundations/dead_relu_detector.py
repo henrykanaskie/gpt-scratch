@@ -30,7 +30,7 @@ class Solution:
         # 5. 'healthy' otherwise
         if not np.all(np.array(dead_fractions) < .5):
             return 'use_leaky_relu'
-        if not np.all(np.array(dead_fractions) < .3):
+        if dead_fractions[0] > .3:
             return 'reinitialize'
         if all(earlier <= later for earlier, later in zip(dead_fractions, dead_fractions[1:])) and (dead_fractions[-1] > .1):
             return 'reduce_learning_rate'
