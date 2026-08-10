@@ -25,7 +25,6 @@ class Solution:
         out = []
         for c in text:
             out.append(stoi[c])
-        print(out)
         return out
 
     def decode(self, ids: List[int], itos: Dict[int, str]) -> str:
@@ -33,7 +32,6 @@ class Solution:
         out = ""
         for i in ids:
             out += (itos[i])
-        print(out)
         return out
 
 
